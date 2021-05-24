@@ -247,7 +247,7 @@ size :91  Time=>9:27:26
 size :91  Time=>9:27:26
 size :91  Time=>9:27:28
 size :92  Time=>9:27:28
-APOLLO MEDICAL CENTER P3  age=> 18   capacity=> 49
-{appointment_confirmation_no=585d1f7b-67bb-41fe-be57-7f491d493017}
+XXXX MEDICAL CENTER P3  age=> 18   capacity=> 49
+{appointment_confirmation_no=585d1f7b-67bb-41fe-be57-xxxxxxxx}
 
 Process finished with exit code 0
