@@ -17,7 +17,7 @@ public class AudioPlay extends Thread
     {
         try
         {
-            filePath = "D:\\beep.wav";
+            filePath = "beep.wav";
 
 
             //clip.loop(Clip.LOOP_CONTINUOUSLY);

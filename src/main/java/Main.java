@@ -20,17 +20,17 @@ public class Main
         Calendar calendar = GregorianCalendar.getInstance(); // creates a new calendar instance
         int count = 0;
         // Create a neat value object to hold the URL
-        String ur = "https://cdn-api.co-vin.in/api/v2/appointment/sessions/calendarByDistrict?district_id=294&date=07-05-2021";
-
+        String ur = "https://cdn-api.co-vin.in/api/v2/appointment/sessions/calendarByDistrict?district_id=294&date=19-05-2021";
+        ur ="https://cdn-api.co-vin.in/api/v2/appointment/sessions/calendarByPin?pincode=370001&date=27-05-2021";//Bhuj
         // ur = "https://cdn-api.co-vin.in/api/v2/appointment/sessions/calendarByPin?pincode=110003&date=05-05-2021";
 
         URL url = new URL(ur);
         ArrayList<String> arr = new ArrayList<String>();
 
-        arr.add("56337065374100");
-        arr.add("41488098483320");
-        arr.add("59636319828470");
-        arr.add("60816660844910");
+        arr.add("60157069371430");
+      //  arr.add("41488098483320");
+     //   arr.add("59636319828470");
+     //   arr.add("60816660844910");
         //Rahul  110003
         // arr.add("43637401223180");
         File file = new File("bearer.txt");
@@ -51,7 +51,7 @@ public class Main
                 // Now it's "open", we can set the request method, headers etc.
                 connection.setRequestProperty("accept", "application/json");
                 connection.setRequestProperty("User-Agent", USER_AGENT);
-                //connection.setRequestProperty("authorization", bearer);
+                connection.setRequestProperty("authorization", bearer);
 
                 // This line makes the request
                 InputStream responseStream = connection.getInputStream();
@@ -104,6 +104,7 @@ public class Main
             }*/
             }catch (Exception e){
                 System.out.println(e.getMessage());
+                Thread.sleep(2500);
             }
             Thread.sleep(2500);
         }

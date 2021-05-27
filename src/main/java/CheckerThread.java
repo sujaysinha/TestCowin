@@ -30,7 +30,7 @@ public class CheckerThread extends Thread
                     Integer capacity = (Integer) slot.get("available_capacity");
                     Integer age = (Integer) slot.get("min_age_limit");
                     Integer centreId= (Integer)session.get("center_id");
-                    if (age == 18  && capacity > 1 && centreId != 421758)
+                    if (age == 18  && capacity != 0 )
                     {
                         System.out.println(((LinkedHashMap)entries.get(i)).get("name")+"  age=> "+age+"   capacity=> "+capacity);
 
@@ -38,7 +38,7 @@ public class CheckerThread extends Thread
                        // String date = (String)slot.get("date");
                         ArrayList<String> slots=  (ArrayList<String>)slot.get("slots");
                         String date = slots.get(slots.size()-1);
-                        BookSchedule.book(BookSchedule.jsonRequest(centreId,sessionId,arr,date,"1"));
+                        //BookSchedule.book(BookSchedule.jsonRequest(centreId,sessionId,arr,date,"1"));
                         Thread t =  new AudioPlay();
                          t.start();
                     }
