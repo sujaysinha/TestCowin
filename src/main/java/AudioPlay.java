@@ -21,7 +21,7 @@ public class AudioPlay extends Thread
 
 
             //clip.loop(Clip.LOOP_CONTINUOUSLY);
-            for(int i=0;i<3;i++)
+            for(int i=0;i<10;i++)
             {
                 AudioInputStream audioInputStream =
                         AudioSystem.getAudioInputStream(new File(filePath).getAbsoluteFile());
@@ -32,7 +32,7 @@ public class AudioPlay extends Thread
                 // open audioInputStream to the clip
                 clip.open(audioInputStream);
                 clip.start();
-                Thread.sleep(2000);
+                Thread.sleep(1000);
             }
         }
         catch(Exception e)

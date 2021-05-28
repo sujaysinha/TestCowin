@@ -15,22 +15,23 @@ public class Main
 {
     public static void main(String[] args) throws Exception
     {
-          String USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36";
+        String USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36";
 
         Calendar calendar = GregorianCalendar.getInstance(); // creates a new calendar instance
         int count = 0;
         // Create a neat value object to hold the URL
-        String ur = "https://cdn-api.co-vin.in/api/v2/appointment/sessions/calendarByDistrict?district_id=294&date=19-05-2021";
-        ur ="https://cdn-api.co-vin.in/api/v2/appointment/sessions/calendarByPin?pincode=370001&date=27-05-2021";//Bhuj
+        String ur = "https://cdn-api.co-vin.in/api/v2/appointment/sessions/calendarByDistrict?district_id=294&date=28-05-2021";
+        //ur ="https://cdn-api.co-vin.in/api/v2/appointment/sessions/calendarByPin?pincode=370001&date=28-05-2021";//Bhuj
         // ur = "https://cdn-api.co-vin.in/api/v2/appointment/sessions/calendarByPin?pincode=110003&date=05-05-2021";
 
         URL url = new URL(ur);
         ArrayList<String> arr = new ArrayList<String>();
 
-        arr.add("60157069371430");
-      //  arr.add("41488098483320");
-     //   arr.add("59636319828470");
-     //   arr.add("60816660844910");
+        //arr.add("60157069371430");//Sonam
+        arr.add("56179781854230");//Sumi test
+        //  arr.add("41488098483320");
+        //   arr.add("59636319828470");
+        //   arr.add("60816660844910");
         //Rahul  110003
         // arr.add("43637401223180");
         File file = new File("bearer.txt");
@@ -68,8 +69,8 @@ public class Main
                         head.add(entries.get(i));
                     else tail.add(entries.get(i));
                 }
-                new CheckerThread(head, arr).start();
-                new CheckerThread(tail, arr).start();
+                new CheckerThread(entries, arr).run(); // temporarily  using run
+               // new CheckerThread(tail, arr).start();
            /* Date dt = new Date();   // given date
             calendar.setTime(dt);   // assigns calendar to given date
             System.out.println("size :"+entries.size()+" Counter->"+count++ + "  Time=>" +calendar.get(Calendar.HOUR_OF_DAY)+":"+calendar.get(Calendar.MINUTE)); // gets hour in 24h format

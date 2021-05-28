@@ -29,8 +29,10 @@ public class CheckerThread extends Thread
                 {
                     Integer capacity = (Integer) slot.get("available_capacity");
                     Integer age = (Integer) slot.get("min_age_limit");
+                    Integer dose1 = (Integer) slot.get("available_capacity_dose1");
+                    Integer dose2= (Integer) slot.get("available_capacity_dose2");
                     Integer centreId= (Integer)session.get("center_id");
-                    if (age == 18  && capacity != 0 )
+                    if (age == 45  && capacity > 1 && dose1 > 1)
                     {
                         System.out.println(((LinkedHashMap)entries.get(i)).get("name")+"  age=> "+age+"   capacity=> "+capacity);
 
@@ -38,9 +40,13 @@ public class CheckerThread extends Thread
                        // String date = (String)slot.get("date");
                         ArrayList<String> slots=  (ArrayList<String>)slot.get("slots");
                         String date = slots.get(slots.size()-1);
-                        //BookSchedule.book(BookSchedule.jsonRequest(centreId,sessionId,arr,date,"1"));
                         Thread t =  new AudioPlay();
                          t.start();
+                        RequestAndOpenCaptcha.createCaptcha( RequestAndOpenCaptcha.generateCaptcha());
+                        RequestAndOpenCaptcha.openCaptcha();
+                        String captcha = RequestAndOpenCaptcha.readCaptcha();
+                        BookSchedule.book(BookSchedule.jsonRequest(centreId,sessionId,arr,date,"1",captcha));
+
                     }
                 }
                 catch (Exception e)

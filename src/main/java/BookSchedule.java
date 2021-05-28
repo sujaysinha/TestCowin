@@ -15,7 +15,7 @@ public class BookSchedule
     {
         ArrayList<String> arr= new ArrayList<String>();
         arr.add("91151377379280");
-        book(jsonRequest(418264,"24e647d2-b906-4aef-9eb8-01d28ad5583b",arr,"04:00PM-05:00PM","1"));
+        book(jsonRequest(418264,"24e647d2-b906-4aef-9eb8-01d28ad5583b",arr,"04:00PM-05:00PM","1","captcha"));
     }
     public static  void book(String request)
     {
@@ -58,7 +58,7 @@ public class BookSchedule
     }
 
 
-    public static String jsonRequest(Integer centerId, String sessionId, ArrayList<String> benefeciaries, String slot, String dose) throws Exception
+    public static String jsonRequest(Integer centerId, String sessionId, ArrayList<String> benefeciaries, String slot, String dose, String captcha) throws Exception
     {
         JSONObject json = new JSONObject();
         String benefic="[";
@@ -76,6 +76,8 @@ public class BookSchedule
         json.put("session_id", sessionId);
         json.put("slot",slot);
         json.put("dose",Integer.parseInt(dose));
+        json.put("captcha",captcha);
+        System.out.println("Request-->"+json);
         return json.toString();
     }
 
