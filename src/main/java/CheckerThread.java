@@ -32,7 +32,7 @@ public class CheckerThread extends Thread
                     Integer dose1 = (Integer) slot.get("available_capacity_dose1");
                     Integer dose2= (Integer) slot.get("available_capacity_dose2");
                     Integer centreId= (Integer)session.get("center_id");
-                    if (age == 45  && capacity > 1 && dose1 > 1)
+                    if (age == 18  && capacity != 0 && dose1 != 0)
                     {
                         System.out.println(((LinkedHashMap)entries.get(i)).get("name")+"  age=> "+age+"   capacity=> "+capacity);
 

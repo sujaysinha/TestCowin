@@ -21,14 +21,14 @@ public class Main
         int count = 0;
         // Create a neat value object to hold the URL
         String ur = "https://cdn-api.co-vin.in/api/v2/appointment/sessions/calendarByDistrict?district_id=294&date=28-05-2021";
-        //ur ="https://cdn-api.co-vin.in/api/v2/appointment/sessions/calendarByPin?pincode=370001&date=28-05-2021";//Bhuj
+        ur ="https://cdn-api.co-vin.in/api/v2/appointment/sessions/calendarByPin?pincode=370001&date=28-05-2021";//Bhuj
         // ur = "https://cdn-api.co-vin.in/api/v2/appointment/sessions/calendarByPin?pincode=110003&date=05-05-2021";
 
         URL url = new URL(ur);
         ArrayList<String> arr = new ArrayList<String>();
 
-        //arr.add("60157069371430");//Sonam
-        arr.add("56179781854230");//Sumi test
+        arr.add("60157069371430");//Sonam
+        //arr.add("56179781854230");//Sumi test
         //  arr.add("41488098483320");
         //   arr.add("59636319828470");
         //   arr.add("60816660844910");
