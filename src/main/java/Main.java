@@ -21,7 +21,8 @@ public class Main
         int count = 0;
         // Create a neat value object to hold the URL
         String ur = "https://cdn-api.co-vin.in/api/v2/appointment/sessions/calendarByDistrict?district_id=294&date=28-05-2021";
-        ur ="https://cdn-api.co-vin.in/api/v2/appointment/sessions/calendarByPin?pincode=370001&date=28-05-2021";//Bhuj
+       // ur ="https://cdn-api.co-vin.in/api/v2/appointment/sessions/calendarByPin?pincode=370001&date=28-05-2021";//Bhuj
+        ur = "https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByDistrict?district_id=240&date=06-06-2021";//Ranchi
         // ur = "https://cdn-api.co-vin.in/api/v2/appointment/sessions/calendarByPin?pincode=110003&date=05-05-2021";
 
         URL url = new URL(ur);
@@ -52,7 +53,7 @@ public class Main
                 // Now it's "open", we can set the request method, headers etc.
                 connection.setRequestProperty("accept", "application/json");
                 connection.setRequestProperty("User-Agent", USER_AGENT);
-                connection.setRequestProperty("authorization", bearer);
+               //* connection.setRequestProperty("authorization", bearer);
 
                 // This line makes the request
                 InputStream responseStream = connection.getInputStream();
@@ -105,7 +106,7 @@ public class Main
             }*/
             }catch (Exception e){
                 System.out.println(e.getMessage());
-                Thread.sleep(2500);
+                Thread.sleep(5000);
             }
             Thread.sleep(2500);
         }
